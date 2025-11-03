@@ -1,0 +1,25 @@
+server:
+  port: 5000
+
+spring:
+  application:
+    name: spring-boot-microservice-boilerplate
+  profiles:
+    active: dev
+  config:
+    import: "optional:configserver:"
+  datasource:
+    url: "jdbc:postgresql://localhost:5432/mydb"
+    username: myuser
+    password: mypassword
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka-server:8761/eureka/
+    register-with-eureka: true
+    fetch-registry: true
