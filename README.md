@@ -26,21 +26,21 @@ http://localhost:5023/swagger-ui.html
 
 ### Upload
 ```
-POST /api/images/upload/profile
-POST /api/images/upload/banner
-POST /api/images/upload/product
+POST /upload/profile
+POST /upload/banner
+POST /upload/product
 ```
 
 ### Retrieve
 ```
-GET /api/images/{id}
-GET /api/images/entity/{type}/{entityId}
+GET /{id}
+GET /entity/{type}/{entityId}
 ```
 
 ### Delete
 ```
-DELETE /api/images/{id}
-DELETE /api/images/entity/{entityId}
+DELETE /{id}
+DELETE /entity/{entityId}
 ```
 
 ## Integration with other services

@@ -1,20 +1,25 @@
 server:
-  port: 5023
+  port: 5005
 
 spring:
   application:
     name: image-service
   profiles:
-    active: dev-local
-
+    active: dev, test
+  config:
+    import: "optional:configserver:http://config-server:8888"
   cloud:
     config:
-      enabled: false
       fail-fast: false
+      retry:
+        initial-interval: 1000
+        max-attempts: 6
+        max-interval: 2000
+        multiplier: 1.1
 
-management:
-  endpoints:
-    web:
-      exposure:
-        include: health,info,metrics
-
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka-server:8761/eureka/
+    register-with-eureka: true
+    fetch-registry: true

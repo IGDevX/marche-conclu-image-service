@@ -27,7 +27,7 @@ import java.util.List;
 import java.util.UUID;
 
 @RestController
-@RequestMapping("/api/images")
+@RequestMapping("")
 @RequiredArgsConstructor
 @Slf4j
 @Tag(name = "Image Management", description = "API for image management (upload, download, delete)")
