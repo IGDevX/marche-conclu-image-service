@@ -8,7 +8,7 @@ WORKDIR /app
 COPY target/*.jar app.jar
 
 # Expose the port your Spring Boot app uses
-EXPOSE 5000
+EXPOSE 5005
 
 # Run the JAR
 ENTRYPOINT ["java", "-jar", "app.jar"]
