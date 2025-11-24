@@ -1,21 +1,21 @@
 server:
-  port: 5000
+  port: 5004
 
 spring:
   application:
-    name: spring-boot-microservice-boilerplate
+    name: image-service
   profiles:
-    active: dev
+    active: dev, test
   config:
-    import: "optional:configserver:"
-  datasource:
-    url: "jdbc:postgresql://localhost:5432/mydb"
-    username: myuser
-    password: mypassword
-    driver-class-name: org.postgresql.Driver
-  jpa:
-    hibernate:
-      ddl-auto: update
+    import: "optional:configserver:http://config-server:8888"
+  cloud:
+    config:
+      fail-fast: false
+      retry:
+        initial-interval: 1000
+        max-attempts: 6
+        max-interval: 2000
+        multiplier: 1.1
 
 eureka:
   client:

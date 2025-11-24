@@ -1,4 +1,4 @@
-package org.igdevx.spring_boot_microservice_boilerplate;
+package org.igdevx.imageservice;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
