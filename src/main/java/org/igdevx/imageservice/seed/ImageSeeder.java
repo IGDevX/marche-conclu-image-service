@@ -28,7 +28,6 @@ public class ImageSeeder implements CommandLineRunner {
     public void run(String... args) throws Exception {
         log.info("🌱 Starting image seeding for dev-local profile...");
 
-        minioService.ensureBucketExists();
         cleanExistingData();
         createSeedImages();
 

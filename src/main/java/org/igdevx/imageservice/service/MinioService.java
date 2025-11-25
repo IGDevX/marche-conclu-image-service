@@ -116,12 +116,12 @@ public class MinioService {
     }
 
     public String getPresignedUrl(String cloudPath) {
-        String endpoint = minioConfig.getEndpoint();
+        String publicUrl = minioConfig.getPublicUrl();
         String bucketName = minioConfig.getBucketName();
-        String publicUrl = String.format("%s/%s/%s", endpoint, bucketName, cloudPath);
+        String fullUrl = String.format("%s/%s/%s", publicUrl, bucketName, cloudPath);
 
-        log.debug("Public URL generated: {}", publicUrl);
-        return publicUrl;
+        log.debug("Public URL generated: {}", fullUrl);
+        return fullUrl;
     }
 
     public void setBucketPublicReadPolicy() {
